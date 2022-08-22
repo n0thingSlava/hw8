@@ -1,15 +1,8 @@
+import java.time.LocalDate;
+
 public class Main {
     public static void yaer(int year) {
         System.out.print(year + "-");
-    }
-    public static int getClientOS(String name) {
-        String osName = "iOS";
-        int clientOS = getClientOS(osName);
-        if (name.equals("iOS")) {
-            return 0;
-        } else {
-            return 1;
-        }
     }
 
     public static void yaerHot() {
@@ -18,6 +11,20 @@ public class Main {
 
     public static void yaerNot() {
         System.out.print("не високосный год");
+    }
+
+    public static void osIOS() {
+        System.out.print("OC iOS-");
+    }
+
+    public static void osANDR() {
+        System.out.print("OC Android-");
+    }
+    public static void osLite(){
+        System.out.print("установить lite-версию");
+    }
+    public static void osObblch(){
+        System.out.print("установить обычную версию");
     }
 
     public static void main(String[] args) {
@@ -33,12 +40,23 @@ public class Main {
         }
         System.out.println();
         System.out.println("Задание №2:");
-     ///////////////////////////////////////
+        ///////////////////////////////////////
         int clientOS = 1; // 1=Andorid ; 0= iOS
         if (clientOS == 0) {
-            System.out.println("Установите версию приложения для IOS по ссылке")
+            osIOS();
         } else if (clientOS == 1) {
-            System.out.println("Установите версию приложения для Android по ссылке");
+            osANDR();
+        }
+        int currentYear = LocalDate.now().getYear();
+        int classClient = 2022;
+        if (clientOS == 0 && classClient < currentYear) {
+            osObblch();
+        } else if (clientOS == 0 && classClient >= currentYear) {
+            osLite();
+        } else if (clientOS == 1 && classClient < currentYear) {
+            osObblch();
+        } else if (clientOS == 1 && classClient >= currentYear) {
+            osLite();
         }
     }
 }
