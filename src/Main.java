@@ -28,8 +28,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        //////////////////////////////////////////////////////////////////////////////////////
         System.out.println("Задание №1:");
-        ///////////////////////////////////////////
         int year = 2021;
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
             yaer(year);
@@ -39,8 +39,8 @@ public class Main {
             yaerNot();
         }
         System.out.println();
+        //////////////////////////////////////////////////////////////////////////////
         System.out.println("Задание №2:");
-        ///////////////////////////////////////
         int clientOS = 1; // 1=Andorid ; 0= iOS
         if (clientOS == 0) {
             osIOS();
