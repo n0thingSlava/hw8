@@ -20,11 +20,30 @@ public class Main {
     public static void osANDR() {
         System.out.print("OC Android-");
     }
-    public static void osLite(){
+
+    public static void osLite() {
         System.out.print("установить lite-версию");
     }
-    public static void osObblch(){
+
+    public static void osObblch() {
         System.out.print("установить обычную версию");
+    }
+    public static void distanceDeliv() {
+        int deliveryDistance = 20;
+        if (deliveryDistance <= 20) {
+            System.out.println("Доставка займет 1 день");
+        return;
+        } else {
+            if (deliveryDistance > 20 && deliveryDistance < 60) {
+                System.out.println("Доставка займет 2 деня");
+            return;
+            } else {
+                if (deliveryDistance >= 60 && deliveryDistance <= 100) {
+                    System.out.println("Доставка займет 3 день");
+                return;
+                }
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -38,6 +57,7 @@ public class Main {
             yaer(year);
             yaerNot();
         }
+        System.out.println();
         System.out.println();
         //////////////////////////////////////////////////////////////////////////////
         System.out.println("Задание №2:");
@@ -58,5 +78,11 @@ public class Main {
         } else if (clientOS == 1 && classClient >= currentYear) {
             osLite();
         }
+        System.out.println();
+        System.out.println();
+        //////////////////////////////////////////////////////////////////////////////
+        System.out.println("Задание №3:");
+        distanceDeliv();
+
+        }
     }
-}
