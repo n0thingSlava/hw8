@@ -3,6 +3,8 @@ public class Main {
         System.out.print(year + "-");
     }
     public static int getClientOS(String name) {
+        String osName = "iOS";
+        int clientOS = getClientOS(osName);
         if (name.equals("iOS")) {
             return 0;
         } else {
@@ -34,7 +36,7 @@ public class Main {
      ///////////////////////////////////////
         int clientOS = 1; // 1=Andorid ; 0= iOS
         if (clientOS == 0) {
-            System.out.println("Установите версию приложения для iOS по ссылке");
+            System.out.println("Установите версию приложения для IOS по ссылке")
         } else if (clientOS == 1) {
             System.out.println("Установите версию приложения для Android по ссылке");
         }
