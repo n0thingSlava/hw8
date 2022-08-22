@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 
 public class Main {
-    ///Метод к задачи 1
+    ///Метод к задаче 1
     public static void yaer(int year) {
         System.out.print(year + "-");
     }
@@ -13,7 +13,7 @@ public class Main {
     public static void yaerNot() {
         System.out.print("не високосный год");
     }
-//метод к задачи 2
+//метод к задаче 2
     public static void osIOS() {
         System.out.print("OC iOS-");
     }
@@ -29,7 +29,7 @@ public class Main {
     public static void osObblch() {
         System.out.print("установить обычную версию");
     }
-    //метод к задачи 3
+    //метод к задаче 3
     public static void distanceDeliv() {
         int deliveryDistance = 20;
         if (deliveryDistance <= 20) {
