@@ -6,6 +6,10 @@ public class Main {
         System.out.print(year + "-");
     }
 
+    public static boolean isLeapYear(int year) {
+        return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+    }
+
     public static void yaerHot() {
         System.out.print("високосный год");
     }
@@ -13,7 +17,8 @@ public class Main {
     public static void yaerNot() {
         System.out.print("не високосный год");
     }
-//метод к задаче 2
+
+    //метод к задаче 2
     public static void osIOS() {
         System.out.print("OC iOS-");
     }
@@ -29,30 +34,26 @@ public class Main {
     public static void osObblch() {
         System.out.print("установить обычную версию");
     }
+
     //метод к задаче 3
     public static void distanceDeliv() {
-        int deliveryDistance = 20;
-        if (deliveryDistance <= 20) {
-            System.out.println("Доставка займет 1 день");
-        return;
-        } else {
-            if (deliveryDistance > 20 && deliveryDistance < 60) {
-                System.out.println("Доставка займет 2 деня");
-            return;
-            } else {
-                if (deliveryDistance >= 60 && deliveryDistance <= 100) {
-                    System.out.println("Доставка займет 3 день");
-                return;
-                }
-            }
+        int deliveryDistance = 40;
+        int days = 1;
+        if (deliveryDistance > 20) {
+            days++;
         }
+        if (deliveryDistance >= 60) {
+            days++;
+        }
+        System.out.printf("Доставка займет %d день", days);
     }
+
 
     public static void main(String[] args) {
         //////////////////////////////////////////////////////////////////////////////////////
         System.out.println("Задание №1:");
         int year = 2021;
-        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+        if (isLeapYear(year)) {
             yaer(year);
             yaerHot();
         } else {
@@ -63,28 +64,16 @@ public class Main {
         System.out.println();
         //////////////////////////////////////////////////////////////////////////////
         System.out.println("Задание №2:");
-        int clientOS = 1; // 1=Andorid ; 0= iOS
-        if (clientOS == 0) {
-            osIOS();
-        } else if (clientOS == 1) {
-            osANDR();
-        }
         int currentYear = LocalDate.now().getYear();
         int classClient = 2022;
-        if (clientOS == 0 && classClient < currentYear) {
-            osObblch();
-        } else if (clientOS == 0 && classClient >= currentYear) {
-            osLite();
-        } else if (clientOS == 1 && classClient < currentYear) {
-            osObblch();
-        } else if (clientOS == 1 && classClient >= currentYear) {
-            osLite();
-        }
+        int OS = 0;
+        String version = currentYear > year ? "облегченную" : "";
+        String system = OS == 0 ? "ios" : "android";
+        System.out.printf("Вам рекомендуется установить %s версию OS %s", version, system);
         System.out.println();
-        System.out.println();
-        //////////////////////////////////////////////////////////////////////////////
-        System.out.println("Задание №3:");
-        distanceDeliv();
 
-        }
+        System.out.println("Задание №3");
+        distanceDeliv();
     }
+
+}
